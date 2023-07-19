@@ -1,2 +1,27 @@
 @use "../utils/keyframes.scss" as *;
 @use "../utils/variables.scss" as *;
+
+.everywhere {
+    font-size: 48px;
+    font-weight: 500;
+    border-radius: 20px;
+    color: $color-white;
+    background: url('../assets/imageSource1.png') no-repeat ;
+    background-size: 100%;
+    background-position: center;
+    height: 220px;
+    display: flex;
+    margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.thumb {
+    display:flex;
+    span{
+        max-width:120px;
+        font-size:18px;
+        align-self: flex-end;
+        padding:20px;
+    }
+}

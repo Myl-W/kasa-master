@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import React from "react";
 import {
@@ -11,6 +10,7 @@ import About from './about/about.js'
 import Details from './details/details.js'
 import Home from './home/home.js'
 import NotFound from './404.js'
+import logo from './assets/logo.svg'
 
 function App() {
   
@@ -19,41 +19,31 @@ function App() {
       <div className='bodyHome'>
 
           <header className="header">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
             <div className='logoKasa'> 
-              <p>K</p>
-              <img></img>
-              <p>sa</p>
+              <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
             </div>
-            {/* <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a> */}
             <nav className='Home'>
-              <ul>
-                <li>
+                <div>
                   <Link to="/">Accueil</Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link to="/about">A propos</Link>
-                </li>
-              </ul>
+                </div>
             </nav>
             
           </header>
 
           <Routes>
-            <Route path="/about" element={<About/>}></Route>
             <Route path="/details/:id"  element={<Details/>}></Route>
+            <Route path="/about" element={<About/>}></Route>
             <Route path="/"  element={<Home/>}></Route>
             <Route path="*" element={<NotFound/>}></Route>
           </Routes>
 
           <footer className='footer'>
+            <div className='logoKasa'> 
+              <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+            </div>
             <p className='logo'>© 2020 Kasa.All rights reserved</p>
             <img className='img'></img>
             

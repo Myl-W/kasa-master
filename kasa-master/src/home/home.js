@@ -5,17 +5,15 @@ import {
 function Home() {
 const numbers = [1, 2, 3, 4, 5, 6];
   const list = numbers.map((number,index) =>
-    <div key={index.toString()} className='thumb'>
-      <Link to={`/details/${index}`}>{number}</Link>
-    </div>
+    <Link key={index.toString()} to={`/details/${index}`} className='thumb'><span>Titre de la location</span></Link>
   );
   return (
     <div>
       <main>
             <div>
-              <p>Chez vous, partout et ailleurs</p>
+              <p className='everywhere'>Chez vous, partout et ailleurs</p>
               <div className='divOfThumbs'><br></br>
-              {list}
+                {list}
               </div>
                             
             </div>

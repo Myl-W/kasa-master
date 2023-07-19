@@ -34,6 +34,7 @@
 
 * {
 	box-sizing: border-box;
+  font-family: $font;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -99,12 +100,37 @@ table {
   flex-direction: row;
   color: $color-primary;
   height: 68px;
+  font-size: 24px;
+  font-weight: 500;
+
+    a:link {
+      color: $color-primary;
+      text-decoration: none;
+    }
+    /* visited link */
+    a:visited {
+      color: $color-primary;
+    }
+    /* mouse over link */
+    a:hover {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+    /* selected link */
+    a:active {
+      color: $color-primary;
+    }
 
   .Home {
     display: flex;
     flex-direction: row;
-    margin: 0px 0px 0px 0px;
+    justify-content: flex-end;
+    align-items: center;
     width: 25%;
+    color: $color-primary;
+    div{
+      margin:0px 20px;
+    }
   }
   .logoKasa {
     width: 70%;
@@ -122,34 +148,63 @@ table {
   background-color: $color-grey;
   border-radius: 20px;
   flex-wrap: wrap;
-  padding: 20px;
-  border-color: #fff;
+  justify-content: center;
+  align-content: center;
+  margin-right: 40px;
+  padding: 40px;
+  border-color: $color-white;
   .thumb {
     background: $color-linear-gradient;
     border-radius: 10px;
     border: 1px;
-    margin: 20px;
+    margin: 45px;
     width: 350px;
     height: 350px;
   }
+  .thumb:link {
+    color: $color-white;
+    text-decoration: none;
+  }
+  /* visited link */
+  .thumb:visited {
+    color: $color-white;
+  }
+  /* mouse over link */
+  .thumb:hover {
+    color: $color-white;
+
+  }
+  /* selected link */
+  .thumb:active {
+    color: $color-white;
+  }
+  
 }
 
 .footer{
   display: flex;
   flex-direction: column;
-  background-color: black;
-  height: 210px ;
+  background-color: $color-black;
+  height: 210px;
   justify-content: center;
+  align-items: center;
   position:relative;
   bottom: 0px;
   width: 100%;
-  color: white;
-  
-  .logo{
-    margin: 1%;
+  color: $color-white;
+  .logo {
+    font-size: 24px;
   }
-  .img{
-    margin-bottom: 2%;
+
+  .logoKasa{
+    margin: 1%;
+    color: $color-white;
+    img{
+      -webkit-filter: brightness(0) invert(1); /* Safari 6.0 - 9.0 */
+      filter: brightness(0) invert(1);
+      width: 122px;
+      height: 39px;
+    }
   }
   
 }

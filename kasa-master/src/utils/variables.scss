@@ -4,7 +4,7 @@ $color-primary: #FF6060;
 // $color-tertiary-light: #99E2D0;
 // $color-tertiary-dark:#008766;
 $color-grey: #F6F6F6;
-// $color-white: #FFFFFF;
+$color-white: #FFFFFF;
 $color-linear-gradient : linear-gradient(7deg,black -40%, $color-primary 92%);
 
 // background colors
@@ -13,9 +13,9 @@ $color-linear-gradient : linear-gradient(7deg,black -40%, $color-primary 92%);
 
 // color background footer
 // $color-footer: #353535;
-
+$font:'Montserrat', sans-serif;
 // // color police
-// $color-black: #000;
+$color-black: #000;
 
 // // taille police
 // $size-fifteen: 15px;
