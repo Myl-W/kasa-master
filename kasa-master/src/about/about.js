@@ -10,7 +10,7 @@ function About() {
   };
   return (
     <div>
-      {/* image baniere */}
+      {/* image bannière */}
       <div>
       </div>
       <div className="accordeon">

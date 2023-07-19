@@ -1,3 +1,6 @@
+@use "../utils/keyframes.scss" as *;
+@use "../utils/variables.scss" as *;
+
 .accordeon {
     .title{
         background:#ff6060;

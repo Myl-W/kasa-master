@@ -54,8 +54,8 @@ function App() {
           </Routes>
 
           <footer className='footer'>
-            <img></img>
-            <p>© 2020 Kasa.All rights reserved</p>
+            <p className='logo'>© 2020 Kasa.All rights reserved</p>
+            <img className='img'></img>
             
           </footer>
       </div>
