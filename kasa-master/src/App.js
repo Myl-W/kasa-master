@@ -18,7 +18,7 @@ function App() {
     <Router>
       <div className='bodyHome'>
 
-          <header className="header">
+        <header className="header">
             <div className='logoKasa'> 
               <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
             </div>
@@ -31,23 +31,24 @@ function App() {
                 </div>
             </nav>
             
-          </header>
+        </header>
 
-          <Routes>
+        <Routes>
             <Route path="/details/:id"  element={<Details/>}></Route>
             <Route path="/about" element={<About/>}></Route>
             <Route path="/"  element={<Home/>}></Route>
             <Route path="*" element={<NotFound/>}></Route>
-          </Routes>
+        </Routes>
 
-          <footer className='footer'>
+        <footer className='footer'>
             <div className='logoKasa'> 
               <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
             </div>
             <p className='logo'>© 2020 Kasa.All rights reserved</p>
             <img className='img'></img>
             
-          </footer>
+        </footer>
+        
       </div>
     </Router>
   );
