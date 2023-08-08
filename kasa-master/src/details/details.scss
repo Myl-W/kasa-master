@@ -1,34 +1,45 @@
 @use "../utils/keyframes.scss" as *;
 @use "../utils/variables.scss" as *;
 
-.accordeon {
-    margin-left: 200px;
+.divAccordeon {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 100%;
+}
 
+.accordeonDetails {
+    width: 45%;
     .title{
         background:$color-primary;
-        border-radius: 5px;
+        border-radius: 15px;
         margin-bottom: 15px;
         color: $color-white;
-        width: 1000px;
-        height: 52px;
+        position: relative;
+        margin-top: 15px;
+        padding:20px;
+        width: 100%;
         font-size:24px;
         cursor:pointer;
     }
 
     .content{
-        background:$color-white;
+        background:$color-grey;
         border-radius: 5px;
         color:$color-primary;
         font-size:24px;
-        width: 1000px;
-        height:0px;
-        transition: all 0.3s;
+        width: 100%;
+        opacity: 0;
+        visibility: none;
+        height:0;
+        transition: all 0.6s;
     }
 
     .content.open{
         border-radius: 5px;
-        width: 1000px;
-        height: 52px;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
         height:auto;
         display: block;
         background-color: $color-grey;
@@ -36,6 +47,9 @@
 
     .arrow{
         display: inline-flex;
+        position:absolute;
+        right:20px;
+        top:20px;
         color:$color-white;
         font-size:40px;
         transition: all 0.3s;
@@ -48,18 +62,49 @@
     }
 }
 
+.carousel .control-prev.control-arrow::before {
+    content:'<'!important;
+}
+
+.carousel .control-next.control-arrow::before {
+    content:'>'!important;
+
+}
+
+.carousel .control-arrow::before, .carousel.carousel-slider .control-arrow::before {
+    border:none!important;
+    font-size:120px!important;
+
+}
+.carousel.carousel-slider .control-arrow:hover{
+    background:transparent!important;
+}
+
+.carousel .carousel-status{
+    display: block!important;
+    top:initial!important;
+    bottom:20px!important;
+    width:100%!important;
+    text-align: center;;
+    left:0;
+    padding: 5px;
+    font-size: 30px!important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+    color: #fff;
+}
+
 .Lodging {
     .carrousel {
         width: 100%;
         .background {
-        
+        width: 100%;
         }
     }
     
     .title {
         color:$color-primary;
         font-size:24px;
-        width: 1000px;
+        width: 100%;
         margin-top: 20px;
         margin-bottom: 5px;
     }
@@ -73,6 +118,9 @@
         .name {
             color:$color-primary;
             font-size:18px;
+            position: absolute;
+            margin-left: 1271px;
+            margin-top: -68px;
         }
         .circle {
             color:$color-primary;
@@ -81,14 +129,10 @@
     }
 
     .starsHost {
-        .full {
-            color:$color-primary;
-            font-size: 36px;
-        }
-        .empty {
-            color:$color-grey;
-            font-size: 36px;
-        }
+        font-size:18px;
+        position: absolute;
+        margin-left: 1261px;
+        margin-top: 6px;
     }
     .tag {
         background:$color-primary;

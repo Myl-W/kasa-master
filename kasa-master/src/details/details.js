@@ -1,14 +1,18 @@
 import './details.scss';
 import React, { useEffect, useState } from 'react';
 import arrow from '../assets/arrow.svg';
-import star from '../assets/star.svg';
+import starActive from '../assets/star-active.png';
+import starInactive from '../assets/star-inactive.png';
 import imageCarrousel from '../assets/imageCarrousel.png';
+import alexandreDumas from '../assets/alexandreDumas.png';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 function Details() {
   const [accordeon, setAccordeon] = useState(() => []);
@@ -21,10 +25,20 @@ function Details() {
     <div>
 
       <div className="Lodging">
-
-        <div className="carrousel">
-          <img className="background"src={imageCarrousel}></img>
-        </div>
+        <Carousel showThumbs={false} infiniteLoop={true} showIndicators={false} statusFormatter={(current, total) => `${current}/${total}`}>
+            <div>
+                <img src={imageCarrousel} />
+            </div>
+            <div>
+                <img src={imageCarrousel} />
+            </div>
+            <div>
+                <img src={imageCarrousel} />
+            </div>
+            <div>
+                <img src={imageCarrousel} />
+            </div>
+        </Carousel>
 
         <div className="title"> Cozy loft on the Canal Saint-Martin
         </div>
@@ -33,16 +47,15 @@ function Details() {
         </div>
 
         <div className="host">
-          <p className="name">Alexandre Dumas</p>
-          <img className="circle"></img>
+          <img className="name" src={alexandreDumas} />
         </div>
 
         <div className="starsHost">
-          <i className="full"src={star}></i>
-          <i className="full"src={star}></i>
-          <i className="full"src={star}></i>
-          <i className="empty"src={star}></i>
-          <i className="empty"src={star}></i>
+          <img src={starActive}></img>
+          <img src={starActive}></img>
+          <img src={starActive}></img>
+          <img src={starInactive}></img>
+          <img src={starInactive}></img>
         </div>
 
         <div>
@@ -53,7 +66,9 @@ function Details() {
 
       </div>
 
-      <div className="accordeon">
+      <div className='divAccordeon'>
+
+        <div className="accordeonDetails">
         
           <div className="title" onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1]])}>Description 
             <div className={`arrow ${accordeon[0] ? "open" : ''}`}>
@@ -65,9 +80,9 @@ function Details() {
             Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.
           </div>
 
-      </div>
+        </div>
 
-      <div className="accordeon">
+        <div className="accordeonDetails">
 
           <div className="title" onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1]])}>Équipements 
             <div className={`arrow ${accordeon[1] ? "open" : ''}`}>
@@ -78,6 +93,8 @@ function Details() {
           <div className={`content ${accordeon[1] ? "open" : ''}`}>
             La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.    
           </div>
+
+        </div>
 
       </div>
     </div>

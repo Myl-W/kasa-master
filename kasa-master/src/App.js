@@ -10,7 +10,7 @@ import About from './about/about.js'
 import Details from './details/details.js'
 import Home from './home/home.js'
 import NotFound from './404.js'
-import logo from './assets/logo.svg'
+import logo from './assets/Logo.png'
 
 function App() {
   
