@@ -13,7 +13,7 @@ function NotFound() {
       <div className="error">
         <div className="text">
           <h1>404</h1>
-          <p>Oups ! La page que vous demandez n'existe pas.</p>
+          <p className='oops'>Oups ! La page que vous demandez n'existe pas.</p>
           <Link to={`/`}> Retournez sur la page d'accueil </Link>
         </div>
       </div>

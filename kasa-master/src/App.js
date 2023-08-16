@@ -44,7 +44,7 @@ function App() {
             <div className='logoKasa'> 
               <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
             </div>
-            <p className='logo'>© 2020 Kasa.All rights reserved</p>
+            <p className='logo'>© 2020 Kasa. All rights reserved</p>
             <img className='img'></img>
             
         </footer>

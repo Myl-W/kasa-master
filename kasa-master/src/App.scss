@@ -1,6 +1,8 @@
 @use "../src/utils/keyframes.scss" as *;
 @use "../src/utils/variables.scss" as *;
+* {
 
+}
 /*
 
 .App-logo {
@@ -35,6 +37,8 @@
 * {
 	box-sizing: border-box;
   font-family: $font;
+  font-family: 'Montserrat', sans-serif!important;
+
 }
 
 html, body, div, span, applet, object, iframe,
@@ -126,14 +130,14 @@ table {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 25%;
+    width: 265px;
     color: $color-primary;
     div{
       margin:0px 20px;
     }
   }
   .logoKasa {
-    width: 70%;
+    width: calc(100% - 265px);
   }
 }
 
@@ -151,7 +155,7 @@ table {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  margin-right: 40px;
+  margin-right: 0;
   padding: 40px;
   border-color: $color-white;
   .thumb {
@@ -209,6 +213,25 @@ table {
   }
   
 }
+
+@media screen and (max-width: 1200px) {
+  
+  .bodyHome {
+      width: 100%;
+  }
+  .divOfThumbs .thumb{
+    width: 100%;
+    height: 200px;
+    margin:20px 0;
+  }
+  .divOfThumbs{
+    padding:0 10px;
+  }
+  .header .logoKasa a img{
+    width:150px;
+  }
+}
+
 
 
 

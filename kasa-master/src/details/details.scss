@@ -4,58 +4,54 @@
 .divAccordeon {
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 35px;
     width: 100%;
 }
 
 .accordeonDetails {
-    width: 45%;
+    margin-bottom: 30px;
+    width: 48%;
     .title{
         background:$color-primary;
-        border-radius: 15px;
-        margin-bottom: 15px;
+        border-radius: 5px;
         color: $color-white;
-        position: relative;
-        margin-top: 15px;
-        padding:20px;
         width: 100%;
+        height: 52px;
         font-size:24px;
-        cursor:pointer;
+        display: flex; /* Make title a flex container */
+        align-items: center; /* Vertically center items */
+        justify-content: space-between; /* Add space between title and arrow */
+        padding: 0 20px; /* Add padding for arrow */
+        margin-bottom:0
     }
-
     .content{
-        background:$color-grey;
+        background:$color-white;
         border-radius: 5px;
         color:$color-primary;
-        font-size:24px;
+        font-size:19px;
+        line-height: 26px;
         width: 100%;
-        opacity: 0;
-        visibility: none;
-        height:0;
-        transition: all 0.6s;
+        height:0px;
+        overflow:hidden;
+        transition: height 0.3s;
     }
-
     .content.open{
         border-radius: 5px;
-        width: 100%;
-        opacity: 1;
-        visibility: visible;
-        height:auto;
-        display: block;
         background-color: $color-grey;
+        width: 100%;
+        margin:0 0 10px 0;
+        padding: 20px 20px 20px 20px;
+        height: 225px;
+        display: block;
     }
-
     .arrow{
+        cursor: pointer;
         display: inline-flex;
-        position:absolute;
-        right:20px;
-        top:20px;
         color:$color-white;
         font-size:40px;
         transition: all 0.3s;
-        transform: rotateX(180deg);
+        transform: rotate(180deg);
     }
-
     .arrow.open{
         transform: rotate(0deg);
         transition: all 0.4s ease-in-out;
@@ -117,7 +113,7 @@
     .host {
         .name {
             color:$color-primary;
-            font-size:18px;
+            width: 164px;
             position: absolute;
             margin-left: 1271px;
             margin-top: -68px;
@@ -132,7 +128,6 @@
         font-size:18px;
         position: absolute;
         margin-left: 1261px;
-        margin-top: 6px;
     }
     .tag {
         background:$color-primary;
@@ -146,5 +141,26 @@
     }
 }
 
-
+@media screen and (max-width: 1200px) {
+    .divAccordeon {
+        display: block;
+        width: 100%;
+    }
+    
+    .accordeonDetails {
+        width:100%
+    }
+    .Lodging .country{
+        width:100%;
+    }
+    .Lodging .starsHost{
+        margin-left:0;
+        position: initial;
+    }
+    .Lodging .host .name{
+        position: initial;
+margin-left: 0;
+margin-top: 0;
+    }
+}
 

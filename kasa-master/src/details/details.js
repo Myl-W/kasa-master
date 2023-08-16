@@ -70,28 +70,37 @@ function Details() {
 
         <div className="accordeonDetails">
         
-          <div className="title" onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1]])}>Description 
-            <div className={`arrow ${accordeon[0] ? "open" : ''}`}>
+          <div className="title">Description 
+            <div onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1]])} className={`arrow ${accordeon[0] ? "open" : ''}`}>
               <img src={arrow}></img>
             </div>
           </div>
           
           <div className={`content ${accordeon[0] ? "open" : ''}`}>
-            Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.
+            Vous serez à 50m du canal Saint-Martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au coeur de Paris avec 5 lignes de météo et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à la station de la gare de l'Est (7 minutes à pied).
           </div>
 
         </div>
 
         <div className="accordeonDetails">
 
-          <div className="title" onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1]])}>Équipements 
-            <div className={`arrow ${accordeon[1] ? "open" : ''}`}>
+          <div className="title">Équipements 
+            <div onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1]])} className={`arrow ${accordeon[1] ? "open" : ''}`}>
               <img src={arrow}></img>
             </div>
           </div>
 
           <div className={`content ${accordeon[1] ? "open" : ''}`}>
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.    
+            <ul>
+              <li>Climatisation</li>
+              <li>Wi-Fi</li>
+              <li>Cuisine</li>
+              <li>Espace de travail</li>
+              <li>Fer à repasser</li>
+              <li>Sèche-cheveux</li>
+              <li>Cintres</li>
+            </ul>
+                
           </div>
 
         </div>

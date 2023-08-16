@@ -19,8 +19,8 @@ function About(props) {
       </div>
       <div className="accordeon">
 
-        <div className="title" onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1],accordeon[2],accordeon[3]])}>Fiabilité 
-          <div className={`arrow ${accordeon[0] ? "open" : ''}`}>
+        <div className="title">Fiabilité 
+          <div onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1],accordeon[2],accordeon[3]])} className={`arrow ${accordeon[0] ? "open" : ''}`}>
             <img src={arrow}></img>
           </div>
         </div>
@@ -32,8 +32,8 @@ function About(props) {
 
       <div className="accordeon">
 
-        <div className="title" onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1],accordeon[2],accordeon[3]])}>Respect 
-            <div className={`arrow ${accordeon[1] ? "open" : ''}`}>
+        <div className="title">Respect 
+            <div onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1],accordeon[2],accordeon[3]])} className={`arrow ${accordeon[1] ? "open" : ''}`}>
               <img src={arrow}></img>
             </div>
         </div>
@@ -45,8 +45,8 @@ function About(props) {
 
       <div className="accordeon">
 
-        <div className="title" onClick={() => setAccordeon(() => [accordeon[0],accordeon[1],!accordeon[2],accordeon[3]])}>Service 
-          <div className={`arrow ${accordeon[2] ? "open" : ''}`}>
+        <div className="title">Service 
+          <div onClick={() => setAccordeon(() => [accordeon[0],accordeon[1],!accordeon[2],accordeon[3]])} className={`arrow ${accordeon[2] ? "open" : ''}`}>
             <img src={arrow}></img>
           </div>
         </div>
@@ -58,8 +58,8 @@ function About(props) {
 
       <div className="accordeon">
 
-        <div className="title" onClick={() => setAccordeon(() => [accordeon[0],accordeon[1],accordeon[2],!accordeon[3]])}>Sécurité 
-          <div className={`arrow ${accordeon[3] ? "open" : ''}`}>
+        <div className="title">Sécurité 
+          <div onClick={() => setAccordeon(() => [accordeon[0],accordeon[1],accordeon[2],!accordeon[3]])} className={`arrow ${accordeon[3] ? "open" : ''}`}>
             <img src={arrow}></img>
           </div>
         </div>

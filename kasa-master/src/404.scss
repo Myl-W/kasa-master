@@ -17,12 +17,14 @@
         margin-bottom: 6%;
         h1{
             font-size: 288px;
+            padding-bottom: 15%;
         }
-        p{
+        .oops{
             font-size: 36px;
         }
         a{
             margin-top: 4%;
+            font-size: 18px;
             width: auto;
             text-decoration: underline;
             color: $color-primary;
