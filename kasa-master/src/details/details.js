@@ -11,16 +11,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Dropdown from '../components/Dropdown';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import data from '../components/data.json';
 
 function Details() {
-  const [accordeon, setAccordeon] = useState(() => []);
-  // Called when the component
-  // first mounts, and called only once
-  useEffect(() => {
-    setAccordeon([false,false]);
-  }, []);
+
   return (
     <div>
 
@@ -39,7 +36,7 @@ function Details() {
                 <img src={imageCarrousel} />
             </div>
         </Carousel>
-
+        
         <div className="title"> Cozy loft on the Canal Saint-Martin
         </div>
 
@@ -69,28 +66,14 @@ function Details() {
       <div className='divAccordeon'>
 
         <div className="accordeonDetails">
-        
-          <div className="title">Description 
-            <div onClick={() => setAccordeon(() => [!accordeon[0],accordeon[1]])} className={`arrow ${accordeon[0] ? "open" : ''}`}>
-              <img src={arrow}></img>
-            </div>
-          </div>
           
-          <div className={`content ${accordeon[0] ? "open" : ''}`}>
-            Vous serez à 50m du canal Saint-Martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au coeur de Paris avec 5 lignes de météo et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à la station de la gare de l'Est (7 minutes à pied).
-          </div>
+          <Dropdown title="Description">
+            <p>
+              Vous serez à 50m du canal Saint-Martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au coeur de Paris avec 5 lignes de météo et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à la station de la gare de l'Est (7 minutes à pied).
+            </p>
+          </Dropdown>
 
-        </div>
-
-        <div className="accordeonDetails">
-
-          <div className="title">Équipements 
-            <div onClick={() => setAccordeon(() => [accordeon[0],!accordeon[1]])} className={`arrow ${accordeon[1] ? "open" : ''}`}>
-              <img src={arrow}></img>
-            </div>
-          </div>
-
-          <div className={`content ${accordeon[1] ? "open" : ''}`}>
+          <Dropdown title="Équipements">
             <ul>
               <li>Climatisation</li>
               <li>Wi-Fi</li>
@@ -100,8 +83,7 @@ function Details() {
               <li>Sèche-cheveux</li>
               <li>Cintres</li>
             </ul>
-                
-          </div>
+          </Dropdown>
 
         </div>
 
