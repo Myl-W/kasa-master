@@ -17,48 +17,44 @@ import { Carousel } from 'react-responsive-carousel';
 import data from '../components/data.json';
 
 function Details() {
+  const accommodationData = data[0];
 
   return (
     <div>
 
       <div className="Lodging">
         <Carousel showThumbs={false} infiniteLoop={true} showIndicators={false} statusFormatter={(current, total) => `${current}/${total}`}>
-            <div>
-                <img src={imageCarrousel} />
-            </div>
-            <div>
-                <img src={imageCarrousel} />
-            </div>
-            <div>
-                <img src={imageCarrousel} />
-            </div>
-            <div>
-                <img src={imageCarrousel} />
-            </div>
+          {Array.from({ length: 4 }).map((_, index) => (
+              <div key={index}>
+                <img src={imageCarrousel} alt={`Carousel Image ${index}`} />
+              </div>
+          ))}
         </Carousel>
         
-        <div className="title"> Cozy loft on the Canal Saint-Martin
+        <div className="title"> {accommodationData.title}
         </div>
 
-        <div className="country"> Paris, Ile-de-France
+        <div className="country"> {accommodationData.location}
         </div>
 
         <div className="host">
-          <img className="name" src={alexandreDumas} />
+          <img className="name" src={alexandreDumas} alt='"Host'/>
         </div>
 
         <div className="starsHost">
-          <img src={starActive}></img>
-          <img src={starActive}></img>
-          <img src={starActive}></img>
-          <img src={starInactive}></img>
-          <img src={starInactive}></img>
+          <img src={starActive} alt="Active Star"/>
+          <img src={starActive} alt="Active Star"/>
+          <img src={starActive} alt="Active Star"/>
+          <img src={starInactive} alt="Inactive Star"/>
+          <img src={starInactive} alt="Inactive Star"/>
         </div>
 
         <div>
-          <i className="tag">Cozy</i>
-          <i className="tag">Canal</i>
-          <i className="tag">Paris 10</i>
+          {accommodationData.tags.map((tag, index) => (
+            <i className="tag" key={index}>
+              {tag}
+            </i>
+          ))}
         </div>
 
       </div>
@@ -67,29 +63,22 @@ function Details() {
 
         <div className="accordeonDetails">
           
-          <Dropdown title="Description">
-            <p>
-              Vous serez à 50m du canal Saint-Martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au coeur de Paris avec 5 lignes de météo et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à la station de la gare de l'Est (7 minutes à pied).
-            </p>
+          <Dropdown title="Description"> 
+            <p>{accommodationData.description}</p>
           </Dropdown>
 
-          <Dropdown title="Équipements">
+          <Dropdown title="Équipements"> 
             <ul>
-              <li>Climatisation</li>
-              <li>Wi-Fi</li>
-              <li>Cuisine</li>
-              <li>Espace de travail</li>
-              <li>Fer à repasser</li>
-              <li>Sèche-cheveux</li>
-              <li>Cintres</li>
+              {accommodationData.équipements.map((équipement, index) => (
+                <li key={index}>{équipement}</li>
+              ))}       
             </ul>
           </Dropdown>
 
         </div>
-
       </div>
     </div>
-);
+)
 }
 
 export default Details;
