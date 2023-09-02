@@ -1,5 +1,28 @@
 @import '../../sass/base/reset';
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/variables';
 
 .home{
     margin: 0 auto;
+}
+
+.home_gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+    gap: 50px; /* Espacement entre les éléments */
+    background-color: #E5E5E5;
+    padding: 55px;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 55px;
+
+    @media screen and (max-width: 1230px){
+        grid-template-columns: repeat(2, 1fr); /* Passage à 2 colonnes sur les écrans plus petits */
+    }
+    
+    @media screen and (max-width: 550px){  
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr); /* Passage à 1 colonne sur les écrans encore plus petits */
+    }
 }

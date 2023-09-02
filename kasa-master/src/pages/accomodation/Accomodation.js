@@ -1,7 +1,8 @@
 import './accomodation.scss'
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
-import datas from '../../data/data'
+import React, { useEffect, useState } from "react"
+import { useParams, Navigate } from "react-router-dom";
+import Tag from '../../components/tag/Tag';
+import datas from '../../data/data.json';
 import Header from "../../components/header/Header";
 import Slider from "../../components/carousel/Carousel"
 import Footer from "../../components/footer/Footer";
@@ -13,19 +14,25 @@ import redStar from '../../assets/red_star.png';
 export default function Accomodation() {
 	
 	const [imageSlider, setImageSlider] = useState([]);
+	const {id} = useParams();
 
-	const idAccomodation = useParams('id').id;
-	const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-	
+	const dataCurrentAccomodation = datas.find(data => data.id === id);
+
 	useEffect(() => {
-		const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-		setImageSlider(dataCurrentAccomodation[0].pictures);
-	}, [idAccomodation]);
+        if (!dataCurrentAccomodation) {
+            return;
+        }
+        setImageSlider(dataCurrentAccomodation.pictures);
+    }, [dataCurrentAccomodation]);
 
-	const name = dataCurrentAccomodation[0].host.name.split(' '); 
-	const rating = dataCurrentAccomodation[0].rating;
-	const description  = dataCurrentAccomodation[0].description;
-	const equipments = dataCurrentAccomodation[0].equipments;
+    if (!dataCurrentAccomodation) {
+        return <Navigate to="/not-found" />;
+    }
+
+	const name = dataCurrentAccomodation.host.name.split(' '); 
+	const rating = dataCurrentAccomodation.rating;
+	const description  = dataCurrentAccomodation.description;
+	const equipments = dataCurrentAccomodation.equipments;
 
 	return (
 		<>
@@ -34,12 +41,12 @@ export default function Accomodation() {
 			<main className="accomodation">
 				<div className="accomodation_content">
 					<div className="accomodation_content_infos">
-						<h1>{dataCurrentAccomodation[0].title}</h1>
-						<p>{dataCurrentAccomodation[0].location}</p>
+						<h1>{dataCurrentAccomodation.title}</h1>
+						<p>{dataCurrentAccomodation.location}</p>
 						<div>
-							{dataCurrentAccomodation[0].tags.map((tag, index) => {
+							{dataCurrentAccomodation.tags.map((tag, index) => {
 								return (
-									<button key={index}>{tag}</button>
+									<Tag key={index} nom={tag}/>
 								)
 							})}
 						</div>
@@ -50,7 +57,7 @@ export default function Accomodation() {
 								<span>{name[0]}</span>
 								<span>{name[1]}</span>
 							</div>
-							<img src={dataCurrentAccomodation[0].host.picture} alt="host of this accomodation" />
+							<img src={dataCurrentAccomodation.host.picture} alt="host of this accomodation" />
 						</div>
 							
 						<div className="accomodation_content_host_stars">

@@ -1,34 +1,22 @@
 import Home from './pages/home/Home';
+import React from 'react';
 import NotFound from './pages/notFound/NotFound';
 import About from './pages/about/About';
 import Accomodation from './pages/accomodation/Accomodation';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const router = createBrowserRouter([
-	{
-		path: "/Kasa/",
-		element: <Home />
-	},
-	{
-		path: "/accomodation/:id",
-		element: <Accomodation />
-	},
-	{
-		path: '/about',
-		element: <About />
-	},
-	{
-		path: "*",
-		element: <NotFound />
-	},
-]);
-
-function App() {
+export default function App() {
 	return (
-		<>
-			<RouterProvider router={router}/>
-		</>
-	);
+        <Router>
+            <Routes>
+                <Route path="/Kasa/" element={<Home />} />
+                <Route path="/accomodation/:id" element={<Accomodation />} />
+				<Route path="/about" element={<About />} />
+                <Route path="/*" element={<NotFound />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default App;
+
+

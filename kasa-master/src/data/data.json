@@ -1,4 +1,4 @@
-const datas = [
+[
 	{
 		"id": "c67ab8a7",
 		"title": "Appartement cosy",
@@ -438,7 +438,7 @@ const datas = [
 	},
 	{
 		"id": "ba55a0cc",
-		"titre": "Maison T5 - Le Vésinet",
+		"title": "Maison T5 - Le Vésinet",
 		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-14-1.jpg",
 		"pictures": [
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-14-1.jpg",
@@ -617,5 +617,3 @@ const datas = [
 		]
 	}
 ]
-
-export default datas;
