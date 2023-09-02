@@ -26,7 +26,7 @@ export default function Accomodation() {
     }, [dataCurrentAccomodation]);
 
     if (!dataCurrentAccomodation) {
-        return <Navigate to="/not-found" />;
+        return <Navigate to="/not-found" replace />;
     }
 
 	const name = dataCurrentAccomodation.host.name.split(' '); 
